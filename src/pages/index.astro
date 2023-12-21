@@ -1,0 +1,245 @@
+---
+const navHome = "Home";
+const navProfile = "About Me";
+const webSite = "Website Used";
+const Framework = "Framework";
+const astro = "Astro.Build";
+const softWare = "Software";
+const vsCode = "Visual Studio Code";
+const myName = "Alfan Hidayat";
+const myWeb = "This is My Website";
+const navAbout = "About Web";
+
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import astroImage from "../image/astro.jpg";
+import vscodeImage from "../image/vscode.png";
+import profilImage from "../image/profil.jpg";
+---
+
+<Layout title="My Website">
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">{navHome}</a></li>
+      <li><a href="/profil">{navProfile}</a></li>
+      <li><a href="/about">{navAbout}</a></li>
+    </ul>
+  </nav>
+  <main>
+    <svg
+      class="astro-a"
+      width="495"
+      height="623"
+      viewBox="0 0 495 623"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+    </svg>
+    <p class="instructions">
+      <Image
+        src={profilImage}
+        alt="descriptive text"
+        style="width: 100px; height: 100px; border-radius: 50%; float: center; display: block; margin: 0 auto;"
+      />
+      <strong>
+        <a href="/profil" style="color: white; text-decoration: none;"
+          >{myName}</a
+        ></strong
+      ><br />
+      {myWeb}<br />
+    </p>
+    <div class="astro-vscode-container">
+      <div class="astro">
+        <a href="https://astro.build/" rel="noopener noreferrer">
+          <Image
+            src={astroImage}
+            alt="descriptive text"
+            style="width: 80px; height: 80px; border-radius: 50%; float: left; margin-right: 20px;"
+          />
+        </a>
+        {webSite}<br />
+        {Framework}<br />
+        <strong>{astro}</strong><br />
+      </div>
+      <div class="vscode">
+        <a href="https://code.visualstudio.com/" rel="noopener noreferrer">
+          <Image
+            src={vscodeImage}
+            alt="descriptive text"
+            style="width: 80px; height: 80px; border-radius: 50%; float: right; margin-left: 20px;"
+          />
+        </a>
+        {webSite}<br />
+        {softWare}<br />
+        <strong>{vsCode}</strong><br />
+      </div>
+    </div>
+  </main>
+
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 800px;
+      max-width: calc(100% - 2rem);
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .astro-a {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translatex(-50%);
+      width: 220px;
+      height: auto;
+      z-index: -1;
+    }
+    .instructions {
+      text-align: center;
+      margin-bottom: 2rem;
+      border: 1px solid #0d1f23; /* Color #0D1F23 */
+      background-color: #0d1f23; /* Replace with a suitable light blue color */
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .instructions code {
+      font-size: 0.8em;
+      font-weight: bold;
+      background-color: #0d1f23; /* Replace with a suitable light gray color */
+      color: #0d1f23; /* Color #0D1F23 */
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+    }
+
+    .instructions strong {
+      color: #0d1f23; /* Color #0D1F23 */
+    }
+
+    .astro-vscode-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .astro {
+      flex: 1;
+      text-align: right;
+      margin-bottom: 2rem;
+      border: 1px solid #0d1f23; /* Color #0D1F23 */
+      background-color: #0d1f23; /* Replace with a suitable light blue color */
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .astro code {
+      font-size: 0.8em;
+      font-weight: bold;
+      background-color: #0d1f23; /* Replace with a suitable light gray color */
+      color: #e4f4fd; /* Color #0D1F23 */
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+    }
+
+    .astro strong {
+      color: #e4f4fd; /* Color #0D1F23 */
+    }
+
+    .vscode {
+      flex: 1;
+      text-align: left;
+      margin-bottom: 2rem;
+      border: 1px solid #0d1f23; /* Color #0D1F23 */
+      background-color: #0d1f23; /* Replace with a suitable light blue color */
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-left: 20px;
+    }
+
+    .vscode code {
+      font-size: 0.8em;
+      font-weight: bold;
+      background-color: #0d1f23; /* Replace with a suitable light gray color */
+      color: #0d1f23; /* Color #0D1F23 */
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+    }
+
+    .vscode strong {
+      color: #e4f4fd; /* Color #0D1F23 */
+    }
+
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+
+    .card-logo {
+      width: 10px;
+      height: 10px;
+      border-radius: 10%;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      display: block;
+      flex-direction: column;
+      align-items: left;
+      text-align: right;
+      margin-bottom: 2rem;
+      border: 1px solid #0d1f23; /* Color #0D1F23 */
+      background-color: #0d1f23; /* Replace with a suitable light blue color */
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .footer code {
+      justify-content: center;
+      font-size: 0.8em;
+      font-weight: bold;
+      background-color: #0d1f23; /* Replace with a suitable light gray color */
+      color: #0d1f23; /* Color #0D1F23 */
+      border-radius: 4px;
+      padding: 0.3em 0.4em;
+    }
+
+    .footer strong {
+      justify-content: center;
+      color: #0d1f23; /* Color #0D1F23 */
+    }
+
+    nav {
+      background-color: #132e35;
+    }
+    .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      margin-left: -40px;
+    }
+    .navbar li {
+      display: inline;
+      float: left;
+    }
+    .navbar a {
+      display: block;
+      color: white; /* Warna #5A636A */
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background-color: #e4f4fd;
+      color: #1f211c;
+    }
+    body {
+      margin: 0;
+    }
+  </style>
+</Layout>
